@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+{%block title_block%} Student Dashboard{%endblock%}
+{%block menu_block%}
+{%include 'assets/menubar.html'%}
+{%endblock%}
+{%block navbar_block%}
+{%include 'assets/sidebar_teacher.html'%}
+{%endblock%}
+{%block content_block%}
+
+
+
+
+<div class="container">
+  <h3>All claimed Item</h3>
+
+  <table border="2">
+    <thead>
+      <td>Claimed Items</td>
+      <td>Claimed By</td>
+      <td>Claimed Item Image</td>
+    </thead>
+    {%for c in claimed_item%}
+    <tr>
+      <td>{{c.admin.found_item_name}}</td>
+      <td>{{c.admin1.admin.first_name}}&nbsp;{{c.admin1.admin.last_name}}</td>
+      <td>{{c.admin.found_item_image}}</td>
+    </tr>
+    {%endfor%}
+  </table>
+
+</div>
+
+{%endblock%}
+{%block footer_block%}
+{%include 'assets/footer.html'%}
+{%endblock%}

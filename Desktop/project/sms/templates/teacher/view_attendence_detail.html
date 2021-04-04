@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+{%block title_block%} Student Dashboard{%endblock%}
+{%block menu_block%}
+{%include 'assets/menubar.html'%}
+{%endblock%}
+{%block navbar_block%}
+{%include 'assets/sidebar_teacher.html'%}
+{%endblock%}
+{%block content_block%}
+
+
+
+<!-- {{student_attendence_detail}} -->
+
+<div class="container">
+  <p>Student Attendence of {{student_view_detail.admin.first_name}}&nbsp;{{student_view_detail.admin.last_name}}</p>
+  <table border="2">
+    <thead>
+
+      <th> Date</th>
+      <th> Class1</th>
+      <th> Class2</th>
+      <th> Class3</th>
+      <th> Class4</th>
+      <th> Class5</th>
+    </thead>
+    {%for s in student_attendence_detail%}
+    <tr>
+      <td>{{s.date}}</td>
+      <td>{{s.clss1}}</td>
+      <td>{{s.clss2}}</td>
+      <td>{{s.clss3}}</td>
+      <td>{{s.clss4}}</td>
+      <td>{{s.clss5}}</td>
+    </tr>
+    {%endfor%}
+  </table>
+
+</div>
+
+
+
+
+
+
+
+{%endblock%}
+{%block footer_block%}
+{%include 'assets/footer.html'%}
+{%endblock%}

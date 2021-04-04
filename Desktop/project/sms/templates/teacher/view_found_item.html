@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+{%block title_block%} Student Dashboard{%endblock%}
+{%block menu_block%}
+{%include 'assets/menubar.html'%}
+{%endblock%}
+{%block navbar_block%}
+{%include 'assets/sidebar_teacher.html'%}
+{%endblock%}
+{%block content_block%}
+
+
+
+<div class="container">
+  <h3>All found Items</h3>
+  <div class="row">
+
+{%for all_found_item in all_found_item%}
+<div class="col-3" >
+  <div class="card" style="width: 18rem;">
+  <img src="{{all_found_item.found_item_image.url}}" class="card-img-top" alt="..." height="200" width="200">
+  <div class="card-body">
+    <h5 class="card-title">{{all_found_item.found_item_name}}</h5>
+    <p class="card-text">{{all_found_item.found_item_detail}}</p>
+    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+  </div>
+</div>
+</div>
+{%endfor%}
+
+</div>
+</div>
+
+
+{%endblock%}
+{%block footer_block%}
+{%include 'assets/footer.html'%}
+{%endblock%}

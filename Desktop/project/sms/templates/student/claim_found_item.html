@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+{%block title_block%} Student Dashboard{%endblock%}
+{%block menu_block%}
+{%include 'assets/menubar.html'%}
+{%endblock%}
+{%block navbar_block%}
+{%include 'assets/sidebar.html'%}
+{%endblock%}
+{%block content_block%}
+
+
+<div class="container">
+  <form method="post">
+    {{form.as_p}}
+    <input type="submit" class="btn btn-primary" value="Claim Item">
+    {%csrf_token%}
+
+  </form>
+
+</div>
+
+
+
+
+{%endblock%}
+{%block footer_block%}
+{%include 'assets/footer.html'%}
+{%endblock%}

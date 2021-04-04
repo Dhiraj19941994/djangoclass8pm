@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+{%block title_block%} Student Dashboard{%endblock%}
+{%block menu_block%}
+{%include 'assets/menubar.html'%}
+{%endblock%}
+{%block navbar_block%}
+{%include 'assets/sidebar_teacher.html'%}
+{%endblock%}
+{%block content_block%}
+
+<!-- {{all_notice}} -->
+<div class="container">
+  {%if all_notice%}
+<div class="row">
+{%for notice in all_notice%}
+  <div class="col-md-3" style='margin:5px;'>
+<div class="card" style="width: 18rem;">
+  <img src="{{notice.notice_image.url}}" class="card-img-top" alt="..." height="200" width="200">
+  <div class="card-body">
+    <h5 class="card-title">Created At: {{notice.uploaded_at}}</h5>
+    <p class="card-text">{{notice.notice_subject}}</p>
+    <a href="edit_notice/{{notice.id}}" class="btn btn-primary">Edit</a>
+  </div>
+</div>
+</div>
+{%endfor%}
+</div>
+{%else%}
+<p>No Notice found.</p>
+{%endif%}
+</div>
+{%endblock%}
+{%block footer_block%}
+{%include 'assets/footer.html'%}
+{%endblock%}

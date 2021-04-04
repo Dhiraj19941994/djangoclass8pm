@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+{%block title_block%} Student Dashboard{%endblock%}
+{%block menu_block%}
+{%include 'assets/menubar.html'%}
+{%endblock%}
+{%block navbar_block%}
+{%include 'assets/sidebar_teacher.html'%}
+{%endblock%}
+{%block content_block%}
+
+
+<div class="container">
+  {%if result%}
+  <table border="2">
+    <thead>
+      <th>Subject</th>
+      <th>Marks</th>
+    </thead>
+    <tr>
+      <td>Microprocessor</td>
+      <td>{{result.microprocessor}}</td>
+    </tr>
+    <tr>
+      <td>Digital Logic</td>
+      <td>{{result.digital_logic}}</td>
+    </tr>
+     <tr>
+        <td>Maths</td>
+        <td>{{result.maths}}</td>
+      </tr>
+     <tr>
+        <td>English</td>
+        <td>{{result.english}}</td>
+      </tr>
+       <tr>
+          <td>Database</td>
+          <td>{{result.database}}</td>
+        </tr>
+         <tr>
+            <td>COA</td>
+            <td>{{result.coa}}</td>
+          </tr>
+
+
+  </table>
+
+
+
+
+  {%else%}
+  <p>No result found.</p>
+  {%endif%}
+
+</div>
+
+
+
+{%endblock%}
+{%block footer_block%}
+{%include 'assets/footer.html'%}
+{%endblock%}

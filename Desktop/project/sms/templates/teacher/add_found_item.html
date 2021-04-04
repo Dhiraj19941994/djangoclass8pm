@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+{%block title_block%} Student Dashboard{%endblock%}
+{%block menu_block%}
+{%include 'assets/menubar.html'%}
+{%endblock%}
+{%block navbar_block%}
+{%include 'assets/sidebar_teacher.html'%}
+{%endblock%}
+{%block content_block%}
+
+<div class="container">
+
+
+  <h3>Please Upload Found Items</h3>
+  <form method="post" enctype="multipart/form-data">
+    {{form.as_p}}
+    <input type="Submit" class="btn btn-primary" value="Add Found Item">
+    {%csrf_token%}
+
+  </form>
+
+</div>
+
+
+
+
+
+
+{%endblock%}
+{%block footer_block%}
+{%include 'assets/footer.html'%}
+{%endblock%}

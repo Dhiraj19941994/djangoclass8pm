@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+{%block title_block%} Student Dashboard{%endblock%}
+{%block menu_block%}
+{%include 'assets/menubar.html'%}
+{%endblock%}
+{%block navbar_block%}
+{%include 'assets/sidebar_teacher.html'%}
+{%endblock%}
+{%block content_block%}
+
+<!-- {{all_student}} -->
+<div class="container">
+
+{%if all_student%}
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">All Students</h3>
+  </div>
+  <!-- /.card-header -->
+  <div class="card-body">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th style="width: 10px">ID</th>
+          <th>Student Name</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        {%for std in all_student %}
+        <tr>
+          <td>{{std.id}}</td>
+          <td>{{std.admin.first_name}}&nbsp;&nbsp;{{std.admin.last_name}}</td>
+          <td><a href="view_student_detail/{{std.id}}">  <button type="button" class="btn btn-primary">View Details</button></a></td>
+        </tr>
+        {%endfor%}
+        <tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- /.card-body -->
+  <div class="card-footer clearfix">
+    <ul class="pagination pagination-sm m-0 float-right">
+      <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+    </ul>
+  </div>
+</div>
+{%else%}
+<p>No Student found.</p>
+{%endif%}
+
+
+
+
+</div>
+
+
+
+
+
+{%endblock%}
+{%block footer_block%}
+{%include 'assets/footer.html'%}
+{%endblock%}
